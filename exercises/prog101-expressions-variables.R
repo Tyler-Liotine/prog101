@@ -13,13 +13,24 @@ cylinder_volume <- pi * radius^2 * height
 # What are the errors in these expressions?
 
 speed_m_s <- distance_m * time_s
-# Should be velocity_m_s not speed
+# Should be velocity_m_s not speed along with the fact the distance should be
+# divided by time not multiplied
+# Correct:
+velocity_m_s <- distance_m / time_s
+
 
 acceleration m s2 <- speed_m_s / time_s
-# Missing the underscores: acceleration_m_s^2
+# Missing the underscores
+# Correct:
+acceleration_m_s2 <- velocity_m_s / time_s
+
 
 force_N < mass + acceleration_m_s2
-# Mas does not have units and the squared is not raised to the power
+# Mass does not have units and the squared is not raised to the power. Also mass
+# and acceleration should be multiplied together not added
+# Correct:
+force_N <- mass_kg * acceleration_m_s2
+
 
 # The energy density of market squid is 4850 joules per gram[1]. If a 225 kg
 # Risso's dolphin needs 5 million joules of energy per day[2] and a typical
